@@ -35,13 +35,16 @@ void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char name)
 
 t_stack_node	*find_cheapest(t_stack_node *stack)
 {
+	t_stack_node	*current;
+
 	if (stack == NULL)
 		return (NULL);
-	while (stack)
+	current = stack;
+	while (current)
 	{
-		if (stack->cheapest)
-			return (stack);
-		stack = stack->next;
+		if (current->cheapest)
+			return (current);
+		current = current->next;
 	}
 	return (NULL);
 }
@@ -51,6 +54,8 @@ void	moves_nodes(t_stack_node **a, t_stack_node **b)
 	t_stack_node	*cheapest_node;
 
 	cheapest_node = find_cheapest(*b);
+	if (!cheapest_node)
+		return ;
 	if (cheapest_node->median && cheapest_node->target_node->median)
 		rotate_both(a, b, cheapest_node);
 	else if (!(cheapest_node->median) && !(cheapest_node->target_node->median))

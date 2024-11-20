@@ -48,6 +48,7 @@ void	push_end(t_stack_node **stack, int number)
 		return ;
 	new_node->next = NULL;
 	new_node->value = number;
+	new_node->cheapest = false;
 	if (*stack == NULL)
 	{
 		*stack = new_node;
