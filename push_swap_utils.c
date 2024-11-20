@@ -47,10 +47,10 @@ long	ft_atol(const char *str)
 	return (num * sign);
 }
 
-int	ft_lstsize(t_stack_node **stack)
+int	ft_lstsize(t_stack **stack)
 {
-	int				i;
-	t_stack_node	*current;
+	int		i;
+	t_stack	*current;
 
 	i = 0;
 	current = *stack;
@@ -62,7 +62,7 @@ int	ft_lstsize(t_stack_node **stack)
 	return (i);
 }
 
-t_stack_node	*find_last_node(t_stack_node *stack)
+t_stack	*find_last_node(t_stack *stack)
 {
 	if (stack == NULL)
 		return (NULL);
@@ -71,7 +71,7 @@ t_stack_node	*find_last_node(t_stack_node *stack)
 	return (stack);
 }
 
-void	push_min_to_b(t_stack_node **a, t_stack_node **b)
+void	push_min_to_b(t_stack **a, t_stack **b)
 {
 	int	min_index;
 	int	len;

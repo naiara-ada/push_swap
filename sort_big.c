@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	set_current_position(t_stack_node *stack)
+void	set_current_position(t_stack *stack)
 {
 	int	i;
 	int	center;
@@ -33,11 +33,11 @@ void	set_current_position(t_stack_node *stack)
 	}
 }
 
-void	set_target_node(t_stack_node *a, t_stack_node *b)
+void	set_target_node(t_stack *a, t_stack *b)
 {
-	t_stack_node	*current_a;
-	t_stack_node	*target_node;
-	long			best_match;
+	t_stack	*current_a;
+	t_stack	*target_node;
+	long	best_match;
 
 	while (b)
 	{
@@ -60,7 +60,7 @@ void	set_target_node(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-void	set_price(t_stack_node *a, t_stack_node *b)
+void	set_price(t_stack *a, t_stack *b)
 {
 	int	len_a;
 	int	leng_b;
@@ -80,7 +80,7 @@ void	set_price(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-void	init_nodes(t_stack_node *a, t_stack_node *b)
+void	init_nodes(t_stack *a, t_stack *b)
 {
 	set_current_position(a);
 	set_current_position(b);
@@ -89,17 +89,17 @@ void	init_nodes(t_stack_node *a, t_stack_node *b)
 	set_cheapest(b);
 }
 
-void	sort_big(t_stack_node **a, t_stack_node **b)
+void	sort_big(t_stack **a, t_stack **b)
 {
-	t_stack_node	*smallest_node;
-	int				len_a;
-	
+	t_stack	*smallest_node;
+	int		len_a;
+
 	len_a = ft_lstsize(a);
 	while (len_a > 3)
 	{
 		pb(b, a);
 		len_a--;
-	}		
+	}
 	sort_three(a);
 	while (*b)
 	{
@@ -113,5 +113,5 @@ void	sort_big(t_stack_node **a, t_stack_node **b)
 			ra(a);
 	else
 		while (*a != smallest_node)
-			rra(a);		
+			rra(a);
 }

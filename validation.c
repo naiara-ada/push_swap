@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int	is_sorted(t_stack_node **stack)
+int	is_sorted(t_stack **stack)
 {
-	t_stack_node	*current;
+	t_stack	*current;
 
 	current = *stack;
 	while (current && current->next)
@@ -52,7 +52,7 @@ void	check_parameters(char **av)
 	}
 }
 
-void	parse_numbers(t_stack_node **a, char **numbers, int index)
+void	parse_numbers(t_stack **a, char **numbers, int index)
 {
 	long	value;
 
@@ -66,7 +66,7 @@ void	parse_numbers(t_stack_node **a, char **numbers, int index)
 	}
 }
 
-void	get_numbers(int ac, char **av, t_stack_node **a)
+void	get_numbers(int ac, char **av, t_stack **a)
 {
 	char	**numbers;
 
@@ -80,10 +80,10 @@ void	get_numbers(int ac, char **av, t_stack_node **a)
 		parse_numbers(a, av, 1);
 }
 
-int	check_duplicates(t_stack_node **a)
+int	check_duplicates(t_stack **a)
 {
-	t_stack_node	*current;
-	t_stack_node	*runner;
+	t_stack	*current;
+	t_stack	*runner;
 
 	current = *a;
 	while (current)

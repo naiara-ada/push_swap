@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-static void	push(t_stack_node **dest, t_stack_node **src)
+static void	push(t_stack **dest, t_stack **src)
 {
-	t_stack_node	*node_push;
+	t_stack	*node_push;
 
 	if (*src == NULL)
 		return ;
@@ -36,14 +36,14 @@ static void	push(t_stack_node **dest, t_stack_node **src)
 	}
 }
 
-void	push_end(t_stack_node **stack, int number)
+void	push_end(t_stack **stack, int number)
 {
-	t_stack_node	*new_node;
-	t_stack_node	*last;
+	t_stack	*new_node;
+	t_stack	*last;
 
 	if (!stack)
 		return ;
-	new_node = malloc(sizeof(t_stack_node));
+	new_node = malloc(sizeof(t_stack));
 	if (!new_node)
 		return ;
 	new_node->next = NULL;
@@ -64,13 +64,13 @@ void	push_end(t_stack_node **stack, int number)
 	}
 }
 
-void	pa(t_stack_node **a, t_stack_node **b)
+void	pa(t_stack **a, t_stack **b)
 {
 	push(a, b);
 	write (1, "pa\n", 3);
 }
 
-void	pb(t_stack_node **b, t_stack_node **a)
+void	pb(t_stack **b, t_stack **a)
 {
 	push(b, a);
 	write (1, "pb\n", 3);

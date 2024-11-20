@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char name)
+void	finish_rotation(t_stack **stack, t_stack *top_node, char name)
 {
 	while (*stack != top_node)
 	{
@@ -33,9 +33,9 @@ void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char name)
 	}
 }
 
-t_stack_node	*find_cheapest(t_stack_node *stack)
+t_stack	*find_cheapest(t_stack *stack)
 {
-	t_stack_node	*current;
+	t_stack	*current;
 
 	if (stack == NULL)
 		return (NULL);
@@ -49,9 +49,9 @@ t_stack_node	*find_cheapest(t_stack_node *stack)
 	return (NULL);
 }
 
-void	moves_nodes(t_stack_node **a, t_stack_node **b)
+void	moves_nodes(t_stack **a, t_stack **b)
 {
-	t_stack_node	*cheapest_node;
+	t_stack	*cheapest_node;
 
 	cheapest_node = find_cheapest(*b);
 	if (!cheapest_node)
@@ -65,10 +65,10 @@ void	moves_nodes(t_stack_node **a, t_stack_node **b)
 	pa(a, b);
 }
 
-void	set_cheapest(t_stack_node *b)
+void	set_cheapest(t_stack *b)
 {
-	long			best_match_value;
-	t_stack_node	*best_match_node;
+	long	best_match_value;
+	t_stack	*best_match_node;
 
 	if (b == NULL)
 		return ;
@@ -84,5 +84,3 @@ void	set_cheapest(t_stack_node *b)
 	}
 	best_match_node->cheapest = true;
 }
-
-

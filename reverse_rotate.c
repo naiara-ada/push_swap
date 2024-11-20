@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-static void	reverse_rotate(t_stack_node **stack)
+static void	reverse_rotate(t_stack **stack)
 {
-	t_stack_node	*last;
-	int				len;
+	t_stack	*last;
+	int		len;
 
 	len = ft_lstsize(stack);
 	if (NULL == *stack || NULL == stack || 1 == len)
@@ -28,8 +28,7 @@ static void	reverse_rotate(t_stack_node **stack)
 	last->next->prev = last;
 }
 
-void	reverse_rotate_both(t_stack_node **a,
-			t_stack_node **b, t_stack_node *cheapest_node)
+void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while (*a != cheapest_node->target_node && *b != cheapest_node)
 	{
@@ -39,19 +38,19 @@ void	reverse_rotate_both(t_stack_node **a,
 	set_current_position(*b);
 }
 
-void	rra(t_stack_node **a)
+void	rra(t_stack **a)
 {
 	reverse_rotate(a);
 	write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack_node **b)
+void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack_node **a, t_stack_node **b)
+void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
