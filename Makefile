@@ -1,6 +1,6 @@
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 MY_SOURCES = push_swap.c \
 				error.c \
 				ft_split.c \

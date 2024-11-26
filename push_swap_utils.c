@@ -53,6 +53,8 @@ int	ft_lstsize(t_stack **stack)
 	t_stack	*current;
 
 	i = 0;
+	if (*stack == NULL)
+		return (0);
 	current = *stack;
 	while (current)
 	{
@@ -66,8 +68,8 @@ t_stack	*find_last_node(t_stack *stack)
 {
 	if (stack == NULL)
 		return (NULL);
-	while (stack->next)
-		stack = stack->next;
+	while (stack && stack->next)
+        stack = stack->next;
 	return (stack);
 }
 

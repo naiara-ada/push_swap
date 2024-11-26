@@ -24,7 +24,6 @@ int	main(int ac, char **av)
 	check_parameters(av);
 	get_numbers(ac, av, &a);
 	if (!check_duplicates(&a) && !is_sorted(&a))
-		sort_stack(&a, &b);
+		sort_stack(&a, &b);	
 	free_stack(&a);
-	return (0);
 }

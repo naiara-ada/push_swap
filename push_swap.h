@@ -43,6 +43,7 @@ int		find_min_index(t_stack **a);
 t_stack	*find_smallest(t_stack *stack);
 t_stack	*find_cheapest(t_stack *stack);
 void	push_min_to_b(t_stack **a, t_stack **b);
+void	print_stack(t_stack **stack);
 
 //validation
 void	check_parameters(char **av);
