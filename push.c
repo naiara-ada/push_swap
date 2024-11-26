@@ -61,7 +61,7 @@ void	push_end(t_stack **stack, int number)
 			last = last->next;
 		last->next = new_node;
 		new_node->prev = last;
-	}	
+	}
 }
 
 void	pa(t_stack **a, t_stack **b)

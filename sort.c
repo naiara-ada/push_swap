@@ -23,7 +23,7 @@ void	sort_three(t_stack **a)
 	third = (*a)->next->next->value;
 	if (first > second && second > third)
 	{
-		sa(a);			
+		sa(a);
 		rra(a);
 	}
 	else if (first > third && third > second)

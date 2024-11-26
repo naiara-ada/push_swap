@@ -32,7 +32,7 @@ void	free_stack(t_stack **stack)
 void	free_numbers(char **numbers)
 {
 	int	i;
-	
+
 	i = 0;
 	while (numbers[i] != NULL)
 	{

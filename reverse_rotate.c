@@ -15,7 +15,7 @@
 static void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*last;
-	t_stack *before_last;
+	t_stack	*before_last;
 	int		len;
 
 	len = ft_lstsize(stack);
@@ -29,7 +29,7 @@ static void	reverse_rotate(t_stack **stack)
 	last->prev = NULL;
 	*stack = last;
 	if (last->next)
-		last->next->prev = last;	
+		last->next->prev = last;
 }
 
 void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)

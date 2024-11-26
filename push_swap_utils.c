@@ -69,7 +69,7 @@ t_stack	*find_last_node(t_stack *stack)
 	if (stack == NULL)
 		return (NULL);
 	while (stack && stack->next)
-        stack = stack->next;
+		stack = stack->next;
 	return (stack);
 }
 

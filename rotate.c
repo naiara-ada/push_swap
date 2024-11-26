@@ -15,7 +15,7 @@
 static void	rotate(t_stack **stack)
 {
 	t_stack	*last;
-	int				len;
+	int		len;
 
 	len = ft_lstsize(stack);
 	if (stack == NULL || *stack == NULL || len == 1)

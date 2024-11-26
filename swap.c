@@ -27,7 +27,7 @@ static void	swap(t_stack **stack)
 	second->next = first;
 	second->prev = NULL;
 	if (first->next)
-		first->next->prev =  first;
+		first->next->prev = first;
 	first->prev = second;
 	*stack = second;
 }
