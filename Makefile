@@ -1,19 +1,19 @@
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
-MY_SOURCES = push_swap.c \
-				error.c \
-				ft_split.c \
-				push_swap_utils.c \
-				push_swap_utils2.c \
-				push.c \
-				reverse_rotate.c \
-				rotate.c \
-				sort_big.c \
-				sort_big_moves.c \
-				sort.c \
-				swap.c \
-				validation.c 
+MY_SOURCES = ./src/push_swap.c \
+				./error/error.c \
+				./utils/ft_split.c \
+				./utils/push_swap_utils.c \
+				./utils/push_swap_utils2.c \
+				./commands/push.c \
+				./commands/reverse_rotate.c \
+				./commands/rotate.c \
+				./src/sort_big.c \
+				./src/sort_big_moves.c \
+				./src/sort.c \
+				./commands/swap.c \
+				./utils/validation.c 
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 
